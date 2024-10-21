@@ -173,6 +173,123 @@
 }
 
 /* top cards end */
+
+/* Cart Popout */
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: -320px; /* Hidden off-screen */
+    width: 320px;
+    height: 100%;
+    background-color: rgba(238, 222, 190, 0.9); /* Vintage beige with transparency */
+    border: 2px solid #d1a74f; /* Muted golden border */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s ease; /* Smooth slide-in transition */
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto; /* Allow scroll for long lists */
+}
+
+.cart-container.active {
+    right: 0; /* Slide in */
+}
+
+/* Cart Header */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Garamond', serif;
+    color: #8e5529; /* Muted brown */
+    border-bottom: 2px solid #d1a74f; /* Soft golden line */
+    padding-bottom: 10px;
+}
+
+/* Cart Items */
+.cart-items {
+    margin: 20px 0;
+}
+
+.cart-item {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #d1a74f;
+    padding-bottom: 10px;
+    background-color: rgba(255, 240, 215, 0.8); /* Light vintage cream for items */
+    border-radius: 8px;
+}
+
+.cart-item img {
+    width: 70px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.item-details h3 {
+    font-family: 'Garamond', serif;
+    font-size: 1.1em;
+    color: #8e5529; /* Muted brown for product titles */
+}
+
+.star {
+    display: none; /* Remove the stars */
+}
+
+/* Cart Footer */
+.cart-footer {
+    padding-top: 10px;
+    font-family: 'Arial', sans-serif;
+    border-top: 2px solid #d1a74f;
+    text-align: center;
+    color: #8e5529; /* Muted brown for footer text */
+}
+
+.total-price {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    background-color: #8e5529; /* Muted brown button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #6b4120; /* Darker brown on hover */
+}
+
+
+/* Cart Footer */
+.cart-footer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.total-price {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #d35400; /* Bold orange for total */
+}
+
+.checkout-btn {
+    background-color: #e74c3c; /* Red for checkout button */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
 /* banner */
 .banner {
     width: 100%;
