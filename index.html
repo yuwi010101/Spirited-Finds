@@ -72,20 +72,20 @@
             </li>
         </ul>
     </div>
-
     <!-- Icons and Login on the right -->
-    <div class="d-flex ml-auto align-items-center">
-        <div class="icons">
-            <img src="./image/user.png" alt="" width="20px" class="mr-2">
-            <img src="./image/heart.png" alt="" width="20px" class="mr-2">
-            <img src="./image/add.png" alt="" width="24px" class="mr-2">
-        </div>
-        <li class="nav-item list-unstyled">
-            <a class="nav-link" href="login.html">Login</a>
-        </li>
+  <div class="d-flex ml-auto align-items-center">
+    <div class="icons">
+        <img src="./image/user.png" alt="" width="20px" class="mr-2">
+        <img src="./image/heart.png" alt="" width="20px" class="mr-2">
+        <img src="./image/add.png" alt="Cart" width="24px" class="mr-2 toggle-cart" style="cursor:pointer;"> <!-- Keep your cart icon -->
     </div>
-</nav>
+    <li class="nav-item list-unstyled">
+        <a class="nav-link" href="login.html">Login</a>
+    </li>
+</div>
 
+
+</nav>
 
         <!-- navbar end -->
       
@@ -631,18 +631,80 @@ Let the adventure begin with Ghibli Dreams!</p>
 
 
       <a href="#" class="arrow"><i><img src="./image/up-arrow.png" alt="" width="50px"></i></a>
-
-
-
+<!-- Cart Popout -->
+<div class="cart-container" id="cart">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <span class="close-cart">&times;</span>
     </div>
+    <div class="cart-items">
+        <!-- Product 1: Ghibli Tote -->
+        <div class="cart-item">
+            <img src="./image/Ghibli Studio Tote Bag.png" alt="Ghibli Studio Tote Bag">
+            <div class="item-details">
+                <h3>Ghibli Tote</h3>
+                <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                </div>
+                <p>Ghibli Studio-themed tote bag.</p>
+                <h6>₱350 <strike>₱700</strike></h6>
+            </div>
+        </div>
 
+        <!-- Product 2: Howl's Scenic -->
+        <div class="cart-item">
+            <img src="./image/HMC Scenic.png" alt="Howl's Scenic">
+            <div class="item-details">
+                <h3>Howl's Scenic</h3>
+                <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star"></i>
+                </div>
+                <p>Stunning print inspired by Howl's Moving Castle.</p>
+                <h6>₱600 <strike>₱1,200</strike></h6>
+            </div>
+        </div>
 
+        <!-- Product 3: Hair Accessories -->
+        <div class="cart-item">
+            <img src="./image/Hair Accessories.png" alt="Hair Accessories">
+            <div class="item-details">
+                <h3>Hair Accessories</h3>
+                <div class="star">
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star checked"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                </div>
+                <p>Ghibli-themed hair accessories.</p>
+                <h6>₱250 <strike>₱500</strike></h6>
+            </div>
+        </div>
+    </div>
+    <div class="cart-footer">
+        <p class="total-price">Total: ₱XX</p>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+</div>
 
+<!-- Script for Cart Functionality -->
+<script>
+    const closeCart = document.querySelector('.close-cart');
+    const cartContainer = document.getElementById('cart');
 
+    closeCart.addEventListener('click', () => {
+        cartContainer.classList.remove('active');
+    });
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-      </script>
-</body>
-</html>
+    document.querySelector('.toggle-cart').addEventListener('click', () => {
+        cartContainer.classList.toggle('active');
+    });
+</script>
